@@ -8,10 +8,13 @@
 # Hints:
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
+""" Enter comma seperated 4 bit binary numbers and output as numbers that are divisible by 5 """
+
 items = []
 num = [x for x in input("Enter a sequence of comma separated 4 bit binary numbers: ").split(',')]
 for p in num:
     x = int(p, 2)
     if not x%5:
         items.append(p)
-print(','.join(items))
+    y=','.join(items)
+print("No of 4 bit numbers divisible by 5:", y)

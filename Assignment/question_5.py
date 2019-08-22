@@ -8,7 +8,8 @@
 # Hints:
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
-string = input("Enter string:")
+"""	Enter an alphanumeric string It  excludes white space characters """
+string = input("Enter an alphanumeric string:")
 count1 = 0
 count2 = 0
 for i in string:
@@ -16,7 +17,5 @@ for i in string:
         count1=count1+1
       elif(i.isupper() or i.islower()):
       	count2=count2+1
-print("The number of digits is:")
-print(count1)
-print("The number of characters is:")
-print(count2)
+print("The number of digits are: ", count1)
+print("The number of characters are: ", count2)

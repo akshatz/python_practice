@@ -9,6 +9,10 @@
 # Hints:
 # Note: In case of input data being supplied to the question, it should be assumed to be a console input in a comma-separated form.
 
+
+"""
+	No of both row elements and column elements to be taken as input
+"""
 row_num = int(input("Input number of rows: "))
 col_num = int(input("Input number of columns: "))
 multi_list = [[0 for col in range(col_num)] for row in range(row_num)]
@@ -17,4 +21,4 @@ for row in range(row_num):
     for col in range(col_num):
         multi_list[row][col]= row*col
 
-print(multi_list)
+print("List generated: ",multi_list)
