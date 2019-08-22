@@ -7,6 +7,8 @@
 # Hints:
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
+""" Words seperated by comma taken as input from console and sorted words as output """
+
 words = input("Enter words seperated by comma: ").split(", ")
 sorted_words = words.sort()
 for sorted_words in words:

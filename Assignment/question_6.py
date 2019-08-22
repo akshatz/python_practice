@@ -8,6 +8,8 @@
 # Hints:
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
+""" Calculate number of Upper case letters and lower case letters"""
+
 string = input("Enter string:")
 count1 = 0
 count2 = 0
