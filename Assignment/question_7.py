@@ -29,6 +29,6 @@ import re
 password = input("Enter passwords separated by comma: ").split(",")
 
 for x in password:
-	res = re.search(r'[A-Za-z0-9@#$]{6,13}',x)
-	if(res):
+	result = re.search(r'[A-Za-z0-9@#$]{6,13}',x)
+	if(result):
 		print(x)

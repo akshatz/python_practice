@@ -15,10 +15,24 @@
 
 """	Computation of Q = Square root of [(2* C * D)/H] """
 
+import re
 import math
-c = 50  
-h = 30 
-d = input("Enter any values seperated by comma: ").split(',')
-for i in d:
-  q=round(math.sqrt((2*c*float(i))/h))
-  print(q)
+import sys
+c = 50
+h = 30
+while True:
+	try:
+		d = input("Enter numbers seperated by comma: ").split(', ')
+		for i in range(len(d)):
+			if (re.search('\D', d[i])):
+				raise ValueError(d)
+			else:
+				continue
+	except ValueError as NumberException:
+	        print("Invalid Input:'{}' is not a number".format(NumberException))
+	        sys.exit(0)
+	else :
+		for i in d:
+			q=round(math.sqrt((2*c*float(i))/h))
+			print(q)
+		sys.exit(0)

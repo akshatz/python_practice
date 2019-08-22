@@ -10,11 +10,25 @@
 
 """ Enter comma seperated 4 bit binary numbers and output as numbers that are divisible by 5 """
 
+import re
+import sys
 items = []
-num = [x for x in input("Enter a sequence of comma separated 4 bit binary numbers: ").split(',')]
-for p in num:
-    x = int(p, 2)
-    if not x%5:
-        items.append(p)
-    y=','.join(items)
-print("No of 4 bit numbers divisible by 5:", y)
+while True:
+	try:
+		inputs = int(input("Enter a sequence of comma separated 4 bit binary numbers(only 0 and 1's): ")).split(',')
+		num = [x for x in inputs]
+		for i in range(num):
+			if not (re.search("^[01]+$",num)):
+				raise ValueError(num)
+			else: 
+				continue
+	except ValueError as Error:
+		print("Error! Please enter only 0's and 1's separated by comma.".format(Error))
+		sys.exit(0)
+	else:
+		for p in num:
+		    x = int(p, 2)
+		    if not x%5:
+		        items.append(p)
+		    y=','.join(items)
+		print("No of 4 bit numbers divisible by 5:", y)
