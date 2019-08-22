@@ -9,7 +9,23 @@
 
 """ Words seperated by comma taken as input from console and sorted words as output """
 
+import re
+import sys
+
 words = input("Enter words seperated by comma: ").split(", ")
-sorted_words = words.sort()
-for sorted_words in words:
-	print(sorted_words)
+while True:
+	try:
+		for i in range(len(words)):
+			if not (re.search("[a-zA-Z]", words[i])):
+				raise ValueError(words)
+			else:
+				continue
+	except ValueError as AlphanumericException:
+		print("Invalid Input:'{}' is not a letter".format(AlphanumericException))
+		sys.exit(0)
+
+	else:
+		sorted_words = words.sort()
+		for sorted_words in words:
+			print(sorted_words)
+		sys.exit(0)

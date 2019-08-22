@@ -9,6 +9,7 @@
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
 """	Enter an alphanumeric string It  excludes white space characters """
+
 string = input("Enter an alphanumeric string:")
 count1 = 0
 count2 = 0
