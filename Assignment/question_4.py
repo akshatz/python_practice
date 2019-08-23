@@ -15,10 +15,10 @@ import sys
 items = []
 while True:
 	try:
-		inputs = int(input("Enter a sequence of comma separated 4 bit binary numbers(only 0 and 1's): ")).split(',')
+		inputs = input("Enter a sequence of comma separated 4 bit binary numbers(only 0 and 1's): ").split(', ')
 		num = [x for x in inputs]
-		for i in range(num):
-			if not (re.search("^[01]+$",num)):
+		for i in range(len(num)):
+			if not (re.search("^[0|1]+$",num[i])):
 				raise ValueError(num)
 			else: 
 				continue
@@ -32,3 +32,4 @@ while True:
 		        items.append(p)
 		    y=','.join(items)
 		print("No of 4 bit numbers divisible by 5:", y)
+		sys.exit(0)
