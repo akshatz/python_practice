@@ -2,6 +2,8 @@
 
 # Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
 
+import re
+import sys
 class iterator:
 	"""
 	Generator generates numbers from 0 to n 
@@ -27,6 +29,14 @@ class iterator:
 		for i in range(0, self.n):
 			if i % 7 == 0:
 				yield i
-n = int(input("Enter the number: "))
-for num in iterator(n).divBySeven():
-	print (num, end="")
+try:
+    n = input("Enter the number(0-9): ")
+    if (re.search("\D",n)):
+        raise ValueError(n)
+except ValueError as Error:
+    print("Please enter between 0-9".format(Error))
+    sys.exit(0)
+else:
+    for num in iterator(int(n)).divBySeven():
+        print (num)
+    sys.exit(0)

@@ -15,28 +15,19 @@
 import sys
 import re
 
-while True:
-	try:
-		X, Y= int(input("Enter number of rows and columns: ")).split(", ")
-		for i in range(len(X)):
-			if (re.search("\D", X[i])):
-				raise ValueError(X)
-			else:
-				continue
-		for i in range(len(Y)):
-			if (re.search("\D", Y[i])):
-				raise ValueError(Y)
-			else:
-				continue
-	except ValueError as NumberException:
-	        print("Invalid Input:'{}' is not a number".format(NumberException))
-	        sys.exit(0)
-	else:
-		multi_list = [[0 for col in range(Y)] for row in range(X)]
-		for row in range(X):
-			for col in range(Y):
-				multi_list[row][col]= row*col
-
-		print("List generated: ",multi_list)
-		sys.exit(0)
-	
+try:
+    rows, cols=input("Enter number of rows and columns: ").split(", ")
+    result=[]
+    if(re.search("\D",rows)):
+            raise ValueError(rows)
+    for i in range(int(rows)):
+            if(re.search("\D",cols)):
+                raise ValueError(cols)
+    r=[]
+    for j in range(int(cols)):
+        mul=i*j
+        r.append(mul)
+        result.append(r)
+    print(result)
+except ValueError as Expection:
+    print("Invalid Value".format(Expection))
